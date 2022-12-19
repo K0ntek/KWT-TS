@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { TimelineMax } from "gsap";
 
 const HeaderQuestions = () => {
 	const elements = [
@@ -41,6 +42,35 @@ const HeaderQuestions = () => {
 		window.addEventListener("resize", setWindowDimensions);
 		return () => window.removeEventListener("resize", setWindowDimensions);
 	}, []);
+	useEffect(() => {
+		const boxes = document.querySelectorAll('.Qimage');
+		const content = document.querySelectorAll('.content');
+
+		const config = {
+			threshold: 0
+		};
+
+		let incrementalDelay = 0.5;
+
+		let observer = new IntersectionObserver(function (entries, self) {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					new TimelineMax({
+						delay: incrementalDelay
+					}).to(entry.target, 0.5, { opacity: 1 });
+					incrementalDelay += 0.1;
+					self.unobserve(entry.target);
+				}
+			});
+		}, config);
+
+		boxes.forEach(box => {
+			observer.observe(box);
+		});
+		content.forEach(box => {
+			observer.observe(box);
+		});
+	})
 
 	return (
 		<div className="header_questions" id="hq">
@@ -68,16 +98,16 @@ const HeaderQuestions = () => {
 
 						{((windowWidth <= 1120 && i % 2 === 0) ||
 							(window.innerWidth <= 1120 && i % 2 !== 0)) && (
-							<div
-								className="Qimage"
-								id="img "
-								style={{
-									background: `url(${element.img})`,
-								}}
-							>
-								<div className="Qimg"></div>
-							</div>
-						)}
+								<div
+									className="Qimage"
+									id="img "
+									style={{
+										background: `url(${element.img})`,
+									}}
+								>
+									<div className="Qimg"></div>
+								</div>
+							)}
 
 						<div className="content">
 							<h1
@@ -108,4 +138,4 @@ const HeaderQuestions = () => {
 	);
 };
 
-export default HeaderQuestions;
+export default HeaderQuestions; 

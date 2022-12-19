@@ -68,22 +68,26 @@ const Form = () => {
 				<h1>OPIEKUN-SZKOŁA</h1>
 				<div className="inputs">
 					<div className="school">
-						<input
-							type="text"
-							placeholder="Szkoła"
-							onChange={(e) => setSchool(e.target.value)}
-							value={school}
-							className={errorFields.includes("school") ? "error" : ""}
-							required
-						/>
-						<input
-							type="text"
-							placeholder="Adres szkoły"
-							onChange={(e) => setSchoolAddress(e.target.value)}
-							value={schoolAddress}
-							className={errorFields.includes("schoolAddress") ? "error" : ""}
-							required
-						/>
+						<div className="person">
+							<input
+								type="text"
+								onChange={(e) => setSchool(e.target.value)}
+								value={school}
+								className={errorFields.includes("school") ? "error" : ""}
+								required
+							/>
+							<span>Szkoła</span>
+						</div>
+						<div className="person">
+							<input
+								type="text"
+								onChange={(e) => setSchoolAddress(e.target.value)}
+								value={schoolAddress}
+								className={errorFields.includes("schoolAddress") ? "error" : ""}
+								required
+							/>
+							<span>Adres szkoły</span>
+						</div>
 						<div className="label">
 							<label htmlFor="rodzaj">Rodzaj konkursu:</label>
 							<select
@@ -100,38 +104,46 @@ const Form = () => {
 						</div>
 					</div>
 					<div className="personal">
-						<input
-							type="text"
-							placeholder="Imię opiekuna"
-							onChange={(e) => setName(e.target.value)}
-							value={name}
-							className={errorFields.includes("name") ? "error" : ""}
-							required
-						/>
-						<input
-							type="text"
-							placeholder="Nazwisko opiekuna"
-							onChange={(e) => setSurname(e.target.value)}
-							value={surname}
-							className={errorFields.includes("surname") ? "error" : ""}
-							required
-						/>
-						<input
-							type="email"
-							placeholder="E-mail"
-							onChange={(e) => setEmail(e.target.value)}
-							value={email}
-							className={errorFields.includes("email") ? "error" : ""}
-							required
-						/>
-						<input
-							type="tel"
-							placeholder="Numer telefonu"
-							onChange={(e) => setPhone(Number(e.target.value))}
-							value={phone ? phone.toString() : ""}
-							className={errorFields.includes("phone") ? "error" : ""}
-							required
-						/>
+						<div className="person">
+							<input
+								type="text"
+								onChange={(e) => setName(e.target.value)}
+								value={name}
+								className={errorFields.includes("name") ? "error" : ""}
+								required
+							/>
+							<span>Imię opiekuna</span>
+						</div>
+						<div className="person">
+							<input
+								type="text"
+								onChange={(e) => setSurname(e.target.value)}
+								value={surname}
+								className={errorFields.includes("surname") ? "error" : ""}
+								required
+							/>
+							<span>Nazwisko opiekuna</span>
+						</div>
+						<div className="person">
+							<input
+								type="email"
+								onChange={(e) => setEmail(e.target.value)}
+								value={email}
+								className={errorFields.includes("email") ? "error" : ""}
+								required
+							/>
+							<span>E-mail</span>
+						</div>
+						<div className="person">
+							<input
+								type="tel"
+								onChange={(e) => setPhone(Number(e.target.value))}
+								value={phone ? phone.toString() : ""}
+								className={errorFields.includes("phone") ? "error" : ""}
+								required
+							/>
+							<span>Numer telefonu</span>
+						</div>
 					</div>
 				</div>
 
@@ -154,9 +166,9 @@ const Form = () => {
 								onClick={() => setParticipantsNumber(participantsNumber + 1)}
 							>
 								<h1>UCZEŃ {participantsNumber + 1}</h1>
-								<input type="text" placeholder="Imię" />
-								<input type="text" placeholder="Nazwisko" />
-								<input type="email" placeholder="E-mail" />
+								<div className="participant"><input type="text" /><span>Imię</span></div>
+								<div className="participant"><input type="text" /><span>Nazwisko</span></div>
+								<div className="participant"><input type="email" /><span>E-mail</span></div>
 							</div>
 						)}
 					</div>

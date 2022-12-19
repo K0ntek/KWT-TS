@@ -421,6 +421,11 @@ span {
 	border-radius: 50%;
 }
 
+.Qimage,
+.content {
+	opacity: 0;
+}
+
 .Qimage {
 	justify-content: center;
 	width: 80%;
