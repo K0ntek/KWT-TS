@@ -1,8 +1,9 @@
 import ParticipantForm from "./ParticipantForm";
-import { useState, useRef, FormEvent } from "react";
+import { useState, useRef, FormEvent, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Data, Participant } from "../interfaces";
+import { gsap } from "gsap";
 
 const Form = () => {
 	const [name, setName] = useState("");
@@ -61,6 +62,10 @@ const Form = () => {
 
 		setIsSubmitting(false);
 	};
+
+	useEffect(() => {
+		gsap.fromTo('.form', { y: '-100%', opacity: 0 }, { y: 0, opacity: 1, duration: 1 });
+	})
 
 	return (
 		<div className="form">
@@ -151,7 +156,7 @@ const Form = () => {
 					<h1>UCZNIOWIE</h1>
 					<hr className="solid" />
 					<div className="uczestnicy">
-						{[...Array(participantsNumber)].map((item, index) => (
+						{[...Array(5)].map((item, index) => (
 							<ParticipantForm
 								key={index + 1}
 								participants={participants}
@@ -159,18 +164,6 @@ const Form = () => {
 								id={index + 1}
 							/>
 						))}
-						{participantsNumber < 5 && (
-							<div
-								className="uczestnik"
-								style={{ opacity: 0.4 }}
-								onClick={() => setParticipantsNumber(participantsNumber + 1)}
-							>
-								<h1>UCZEŃ {participantsNumber + 1}</h1>
-								<div className="participant"><input type="text" /><span>Imię</span></div>
-								<div className="participant"><input type="text" /><span>Nazwisko</span></div>
-								<div className="participant"><input type="email" /><span>E-mail</span></div>
-							</div>
-						)}
 					</div>
 				</div>
 				{/* <ReCAPTCHA

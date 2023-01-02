@@ -5,6 +5,11 @@ textarea:focus {
 	outline: none;
 }
 
+body {
+	width: 100%;
+	height: 100%;
+}
+
 input {
 	background: transparent;
 	border: none;
@@ -51,6 +56,7 @@ input[type="submit"]:hover {
 	width: 400px;
 }
 
+
 .person input {
 	position: relative;
 	width: 100%;
@@ -62,13 +68,6 @@ input[type="submit"]:hover {
 	left: 0;
 	transition: .5s;
 	transform: translateY(-40px);
-}
-
-.person input:valid~span,
-.person input:focus~span {
-	transform: translateY(-70px);
-	opacity: 1;
-	transition: .5s;
 }
 
 .school input {
@@ -95,45 +94,42 @@ input[type="submit"]:hover {
 }
 
 .participant input:valid~span,
-.participant input:focus~span {
+.participant input:focus~span,
+.person input:valid~span,
+.person input:focus~span {
 	transform: translateY(-70px);
 	transition: .5s;
 }
 
-select {
-	background-color: aliceblue;
-	border: none;
-	font-family: "Michroma", sans-serif;
-}
-
-select option {
-	background: #293021;
-	color: white;
+.participant input:valid,
+.participant input:focus,
+.person input:valid,
+.person input:focus {
+	border-bottom: 2px solid rgb(109, 182, 0);
+	transition: .3s;
 }
 
 .main {
 	width: 100%;
-	min-height: 200vh;
 	display: grid;
 	grid-template-columns: 100%;
 	grid-template-rows: 25% 75%;
 	text-align: center;
 	justify-content: center;
+	background-position-y: 100%;
 	background: linear-gradient(black, transparent),
 		url("https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1600");
-	background-position-y: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
 .background {
-	height: 100%;
 	width: 100%;
 	/* background: #114133; */
 	color: white;
 	align-items: center;
 	margin: auto;
-	filter: blur(6px);
+	/* filter: blur(6px); */
 }
 
 .background h1 {
@@ -152,12 +148,25 @@ select option {
 select {
 	padding: 0 15px;
 	font-size: 20px;
+	background-color: transparent;
 	border: none;
+	font-family: "Michroma", sans-serif;
 	border-bottom: 2px solid #293021;
+}
+
+select option {
+	background: #293021;
+	color: white;
+}
+
+
+select:focus {
+	outline: none;
 }
 
 .form {
 	width: 90%;
+	/* min-height: auto; */
 	border-radius: 30px;
 	margin: auto;
 	padding: 50px 0;
@@ -211,18 +220,6 @@ hr.solid {
 	margin-bottom: 20px;
 }
 
-@media screen and (max-width: 1500px) {
-	.main {
-		min-height: 180vh;
-	}
-
-	@media screen and (max-height: 900px) {
-		.main {
-			min-height: 200vh;
-		}
-	}
-}
-
 @media screen and (max-width: 1350px) {
 	.uczestnicy {
 		gap: 0;
@@ -243,18 +240,6 @@ hr.solid {
 	.uczestnicy div {
 		display: flex;
 		flex-direction: column;
-	}
-
-	@media screen and (max-height: 900px) {
-		.main {
-			min-height: 250vh;
-		}
-	}
-}
-
-@media screen and (max-width: 900px) {
-	.main {
-		min-height: 400vh;
 	}
 
 	.uczestnicy {
@@ -293,13 +278,5 @@ hr.solid {
 		justify-content: center;
 		margin: auto;
 		text-align: center;
-	}
-}
-
-@media screen and (max-width: 450px) {
-	@media screen and (max-height: 750px) {
-		.main {
-			min-height: 400vh;
-		}
 	}
 }

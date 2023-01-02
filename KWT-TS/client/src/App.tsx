@@ -1,6 +1,6 @@
 import "./styles/index.css";
-import "./styles/form.css";
 import "./styles/gallery.css";
+import "./styles/form.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./fontello/css/fontello.css";
 

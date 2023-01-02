@@ -43,48 +43,20 @@ const HeaderQuestions = () => {
 		window.addEventListener("resize", setWindowDimensions);
 		return () => window.removeEventListener("resize", setWindowDimensions);
 	}, []);
-	// useEffect(() => {
-	// 	const boxes = document.querySelectorAll('.Qimage');
-	// 	const content = document.querySelectorAll('.content');
-
-	// 	const config = {
-	// 		threshold: 0
-	// 	};
-
-	// 	let incrementalDelay = 0.5;
-
-	// 	let observer = new IntersectionObserver(function (entries, self) {
-	// 		entries.forEach(entry => {
-	// 			if (entry.isIntersecting) {
-	// 				new TimelineMax({
-	// 					delay: incrementalDelay
-	// 				}).to(entry.target, 0.5, { opacity: 1 });
-	// 				incrementalDelay += 0.1;
-	// 				self.unobserve(entry.target);
-	// 			}
-	// 		});
-	// 	}, config);
-
-	// 	boxes.forEach(box => {
-	// 		observer.observe(box);
-	// 	});
-	// 	content.forEach(box => {
-	// 		observer.observe(box);
-	// 	});
-	// })
 
 
-	useEffect(()=>{
+
+	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		const images = document.querySelectorAll('.Qimage')
 		const contentElements = document.querySelectorAll('.content')
-			images.forEach(image => {
-				gsap.fromTo(image,{y:"200px", opacity:0}, {y:0, opacity:1, duration:1, ease:'easeInOut', scrollTrigger:image, start:' top 30%'})
+		images.forEach(image => {
+			gsap.fromTo(image, { y: "200px", opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'easeInOut', scrollTrigger: image, start: ' top 30%' })
 		});
 		contentElements.forEach(content => {
-				gsap.fromTo(content,{y:"-200px", opacity:0}, {y:0, opacity:1, duration:1, ease:'easeInOut', scrollTrigger:content, start:' top 30%'})
+			gsap.fromTo(content, { y: "-200px", opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'easeInOut', scrollTrigger: content, start: ' top 30%' })
 		});
-	},[])
+	}, [])
 
 
 
