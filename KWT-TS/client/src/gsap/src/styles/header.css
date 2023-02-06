@@ -1,0 +1,360 @@
+body{
+    width: 100%;
+    height: 100%;
+  color: black;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(151, 149, 149);
+}
+
+/* HEADER */
+
+.header{
+  width: 100%;
+  height: 100%;
+}
+
+.back{
+    width:100%;
+    height: 100%;
+    position: relative;
+    top:0;
+    left:0;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+  }
+  
+
+  .car-video-bg::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(80deg, transparent, rgba(0, 0, 0, 0.9))
+}
+
+.content{
+  background: rgba(0,0,0,.98);
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  margin-top: -1px;
+  z-index: 5;
+}
+
+.contentElements{
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  column-gap:60px;
+  padding: 20px 0;
+}
+
+.contentElement{
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+.contentText{
+  color: white;
+  text-align: justify;
+  position: relative;
+  top: 5%;
+}
+
+.contentText h2{
+  color: rgb(126, 126, 126);
+  font-family: 'Poiret One', cursive;
+}
+
+.contentText p{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contentLine{
+  width: 1px;
+  height: 70%;
+  position: relative;
+  top: 20%;
+  background: rgba(255,255,255,.3);
+}
+
+.circle{
+width: 12px;
+height: 12px;
+border-radius: 50%;
+/* background: rgb(161, 86, 0); */
+background: rgb(146, 5, 33);
+position: relative;
+top: -9px;
+left: -6px;
+}
+
+
+.desktop-title{
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  color: white;
+}
+.mobile-title{
+  margin: auto;
+  text-align: center;
+  display: none;
+  padding: 20px 0;
+  color: white;
+}
+
+.mobile-title h1{
+  font-size: 50px;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+}
+
+.desktop-title button, .mobile-title button{
+  background: none;
+  border: 2px solid silver;
+  color: silver;
+  padding: 10px 40px;
+  font-size: 30px;
+  transition: .3s;
+  margin-top: 20px;
+  z-index: auto;
+}
+
+.mobile-title button{
+  padding: 5px 20px;
+  font-size: 25px;
+  border: 2px solid rgb(112, 0, 0);
+  background: black;
+}
+
+.desktop-title button:hover, .mobile-title button:hover{
+background: silver;
+color: black;
+}
+
+
+h1{
+  font-size: 70px;
+  display: flex;
+}
+
+h1 span{
+  color: black;
+  text-shadow: 0px 0px 50px rgb(255, 255, 255);
+  font-style: italic;
+  display: flex;
+}
+h1 span .rLogo{
+  background: rgb(163, 0, 0);
+  border: 2px solid silver;
+  display: inline-block;
+  transform: skew(-15deg);
+  padding-left: 10px;
+  padding-right: 4px;
+}
+
+.mLogo{
+  width: 60px;
+  height: 60px;
+  transform: skew(-15deg);
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  margin-top: 10px;
+}
+
+.mLogo .blue{
+  width: 100%;
+  height: 100%;
+  background: #0669b5;
+}
+.mLogo .darkBlue{
+  width: 100%;
+  height: 100%;
+  background: #05407d;
+}
+.mLogo .red{
+  width: 100%;
+  height: 100%;
+  background: #eb2912;
+}
+
+h1 .m{
+  color: white;
+}
+
+
+.amgLines{
+  width: 120px;
+  height: 60px;
+  transform: skew(-25deg);
+  /* background: red; */
+  display: grid;
+  grid-template-columns: 35% 20% 15% 10% 8%;
+  column-gap: 5%;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.amgLogo{
+  color:white;
+  padding-left: 15px;
+  border-radius: 10px;
+  text-shadow: none;
+  font-style: normal;
+  font-family: 'Orbitron', sans-serif;
+  font-weight:lighter;
+}
+
+.amg{
+  background: rgb(110, 0, 0);
+  border-radius: 3px;
+}
+
+/* GALLERY */
+.buttons{
+  width: 100%;
+  position: absolute;
+  top: 70px;
+  right:12px;
+  margin: none;
+  display: flex;
+}
+.buttons button{
+  background: rgb(0, 0, 0);
+  aspect-ratio: 1/1;
+  width: 100px;
+  border: none;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+
+.specs{
+  background:#f1f1f1;
+}
+
+.specs h2, .interior h2{
+  text-align: center;
+  color: rgb(146, 5, 71);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.specs, .carBack, .interior{
+  font-size: 20px;
+}
+
+.carBack h2{
+  /* color: burlywood; */
+  /* color:wheat; */
+  color:rgb(150, 119, 79);
+  text-shadow: 2px 2px 0px rgb(0, 0, 0);
+  padding: 10px 30px;
+  font-size: 35px;
+  margin-left: 1%;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.carBack{
+  padding: 200px 0;
+  text-align: justify;
+  color: white;
+}
+
+.interior{
+  background: black;
+  color: white;
+}
+
+.interiorContent, .specsContent{
+  text-align: justify;
+  margin: auto;
+}
+
+.interiorContent img, .specsContent img {
+  width: 100%;
+}
+
+
+.form{
+  background:#f1f1f1;
+}
+
+.contact{
+  padding: 50px 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.form input[type="text"], input[type="email"], .form textarea {
+width: 90%;
+padding: 10px 0;
+background: none;
+}
+.form input[type="text"], input[type="email"], .form textarea{
+  border: none;
+  border-bottom: 2px solid black;
+  margin: 20px 0;
+}
+
+.form input[type="text"]:focus, input[type="email"]:focus, .form textarea:focus{
+outline: none;
+}
+
+.form input[type="button"]{
+  padding: 8px 40px;
+  background: none;
+  font-size: 20px;
+  transition: .3s;
+}
+.form input[type="button"]:hover{
+  background: black;
+  color: white;
+}
+
+@media screen and (max-width:850px) {
+  .contentElements{
+    grid-template-columns: repeat(2, 40%);
+  }
+}
+
+@media screen and (max-width:850px) {
+  .contentElements{
+    grid-template-columns: repeat(1, 80%);
+  }
+}
+
+@media screen and (max-width:850px) {
+  .desktop-title{
+    display: none;
+  }
+  .mobile-title{
+    display: block;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .amgLogo, .m{
+    font-size: 40px;
+  }
+  .amgLines{
+    width: 80px;
+    height: 40px;
+  }
+}
+
+
