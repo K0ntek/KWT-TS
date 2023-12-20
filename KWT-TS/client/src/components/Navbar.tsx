@@ -36,9 +36,6 @@ const Navbar = () => {
 						<Link to={"/#about"}>INFORMACJE</Link>
 					</li>
 					<li onClick={change}>
-						<Link to={"/gallery"}>GALERIA ZDJĘĆ</Link>
-					</li>
-					<li onClick={change}>
 						<Link to={"/join"}>
 							<span style={{ color: "red" }}>DOŁĄCZ</span>
 						</Link>
