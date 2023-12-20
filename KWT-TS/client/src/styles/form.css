@@ -111,6 +111,8 @@ input[type="submit"]:hover {
 
 .main {
 	width: 100%;
+	display: grid;
+	grid-template-columns: 100%;
 	text-align: center;
 	justify-content: center;
 	background-position-y: 100%;
@@ -130,8 +132,9 @@ input[type="submit"]:hover {
 }
 
 .background h1 {
-	margin: 50px 0;
+	margin: auto;
 	font-size: 70px;
+	margin: 50px 0;
 }
 
 .label {
@@ -161,10 +164,10 @@ select:focus {
 .form {
 	width: 90%;
 	border-radius: 30px;
-	margin: 100px auto;
 	padding: 50px 0;
 	background: rgba(255, 255, 255, 0.9);
 	box-shadow: 0px 0px 20px 0px white;
+	margin: 100px auto;
 }
 
 h1 {
